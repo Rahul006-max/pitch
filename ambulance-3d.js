@@ -66,17 +66,19 @@
       this.isPaused = false;
       this.clock = new THREE.Clock();
 
-      // Camera positions for slides (angled so rig is visible on the right half)
+      // Camera positions for 6 slides (angled so rig is visible on the right half)
       this.cameraStops = [
         // Slide 01: Hero Angle
         { pos: new THREE.Vector3(4.8, 2.6, 7.8), target: new THREE.Vector3(1.2, 0.9, 0.0) },
         // Slide 02: Code Red Highway (Lower dramatic perspective)
-        { pos: new THREE.Vector3(4.2, 2.0, 7.0), target: new THREE.Vector3(1.0, 0.85, 0.2) },
-        // Slide 03: Solution Inspection (Elevated 3/4 view)
+        { pos: new THREE.Vector3(4.2, 1.9, 7.0), target: new THREE.Vector3(1.0, 0.85, 0.2) },
+        // Slide 03: How It Works / Micro-Demo (Elevated 3/4 view)
         { pos: new THREE.Vector3(4.5, 2.8, 6.8), target: new THREE.Vector3(1.1, 1.0, -0.2) },
-        // Slide 04: Google Cloud Architecture (Speed run tracking)
-        { pos: new THREE.Vector3(5.0, 2.4, -6.5), target: new THREE.Vector3(1.0, 0.9, 0.0) },
-        // Slide 05: Dawn Arrival / Ask (Golden Hour quarter shot)
+        // Slide 04: Product Suite / Rig Tech Bay Angle
+        { pos: new THREE.Vector3(3.6, 1.7, 5.2), target: new THREE.Vector3(0.9, 0.9, 0.1) },
+        // Slide 05: Google Cloud Architecture (Speed run tracking)
+        { pos: new THREE.Vector3(4.9, 2.4, -6.5), target: new THREE.Vector3(1.0, 0.9, 0.0) },
+        // Slide 06: Dawn Arrival / The Ask (Golden Hour quarter shot)
         { pos: new THREE.Vector3(4.6, 2.2, 7.2), target: new THREE.Vector3(1.1, 0.85, 0.0) }
       ];
 
@@ -535,7 +537,7 @@
 
     animate() {
       requestAnimationFrame(() => this.animate());
-      if (this.isPaused) return;
+      if (this.isPaused || document.body.classList.contains("simple-view")) return;
 
       const delta = this.clock.getDelta();
       const elapsed = this.clock.getElapsedTime();
@@ -599,9 +601,11 @@
         targetPos = this.inspectionStops[this.inspectionMode].pos;
         targetLook = this.inspectionStops[this.inspectionMode].target;
       } else {
-        const stopIdx = Math.max(0, Math.min(4, Math.floor(this.chapterProgress)));
-        const nextIdx = Math.min(4, stopIdx + 1);
-        const frac = this.chapterProgress - stopIdx;
+        const maxIdx = this.cameraStops.length - 1;
+        const scaledProgress = this.chapterProgress * (maxIdx / Math.max(1, (document.querySelectorAll ? (document.querySelectorAll('.stop').length - 1) : maxIdx)));
+        const stopIdx = Math.max(0, Math.min(maxIdx - 1, Math.floor(scaledProgress)));
+        const nextIdx = Math.min(maxIdx, stopIdx + 1);
+        const frac = Math.max(0, Math.min(1, scaledProgress - stopIdx));
 
         const p1 = this.cameraStops[stopIdx];
         const p2 = this.cameraStops[nextIdx];

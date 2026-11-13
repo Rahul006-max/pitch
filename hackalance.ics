@@ -1,15 +1,16 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Hackalance//Emergency Tech Hackathon//EN
+PRODID:-//Wildcat Devs//Startup Buildathon India 2026//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-SUMMARY:Hackalance — Rapid Response Solo Builder Sprint
-UID:hackalance-2026-dispatch@tinkerhub.org
+SUMMARY:Wildcat Devs — AI Emergency Intake & Dispatch Pitch
+UID:pitch-2026-wildcatdevs@buildathon.in
 DTSTART:20261121T100000Z
-DTEND:20261122T040000Z
-DESCRIPTION:A 12-hour high-octane solo builder sprint aboard a fleet of high-tech Mobile Tech ICUs / Ambulances rushing through the midnight city. Organized by Devin × TinkerHub.
-LOCATION:Central Dispatch Station, Metro Sector 01
+DTEND:20261121T110000Z
+DESCRIPTION:Presentation & live demonstration of Wildcat Devs: Real-time AI emergency intake and ambulance dispatch network for India, powered by Gemini Live, Gemma, and Google Cloud. Startup Buildathon India 2026 (Google DeepMind | Google Cloud).
+LOCATION:Startup Buildathon India 2026 / Bengaluru, Karnataka, India
+ORGANIZER;CN=Team Wildcat Devs:mailto:contact@wildcatdevs.in
 STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR

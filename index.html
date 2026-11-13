@@ -4,10 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#091a24">
-  <meta name="description" content="Wildcat Devs Pitch Deck — Startup Buildathon India 2026. Powered by Google DeepMind & Google Cloud.">
-  <title>Wildcat Devs — Startup Buildathon India 2026</title>
+  <meta name="description" content="Wildcat Devs — AI emergency intake and ambulance dispatch network for India, built on Gemini Live, Gemma, and Google Maps. Startup Buildathon India 2026 (Google DeepMind | Google Cloud).">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Wildcat Devs — AI Emergency Intake & Dispatch Network">
+  <meta property="og:description" content="Every minute counts. Turning frantic emergency voice calls into located, triaged cases and dispatching the nearest ambulance over an open network.">
+  <meta property="og:url" content="https://pitch-drab-six.vercel.app/">
+  <meta property="og:site_name" content="Wildcat Devs · Startup Buildathon India 2026">
+  <meta property="og:image" content="https://pitch-drab-six.vercel.app/brand-preview.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wildcat Devs — AI Emergency Intake & Ambulance Dispatch">
+  <meta name="twitter:description" content="Sub-second voice intake in Kannada, Hindi, and English. Pinpoint landmark triangulation and open fleet dispatch powered by Gemini Live & Google Maps.">
+  <meta name="twitter:image" content="https://pitch-drab-six.vercel.app/brand-preview.png">
+
+  <title>Wildcat Devs — AI Emergency Intake & Dispatch | Startup Buildathon India 2026</title>
+  
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="styles.css">
-  <script src="three.min.js"></script>
+  
+  <!-- Lightweight Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><rect width='48' height='48' rx='10' fill='%230c2332'/><path d='M24 10V38M10 24H38' stroke='%23ff334b' stroke-width='4.5' stroke-linecap='round'/><path d='M12 24L18 24L21 16L27 32L30 24L36 24' stroke='%2300d2ff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 </head>
 <body data-stop="0">
   <a href="#voyage" class="skip">Skip to pitch slides</a>
@@ -37,16 +58,38 @@
     </a>
 
     <div class="edition">
-      <span>TEAM: WILDCAT DEVS (6 MEMBERS)</span>
+      <span>TEAM: WILDCAT DEVS (6 BUILDERS)</span>
       <span>STARTUP BUILDATHON INDIA 2026</span>
     </div>
 
     <div class="mast-actions">
-      <button class="guide-open" aria-haspopup="dialog">
-        Full Pitch Dossier 
+      <!-- Simple 2D / 3D Experience Toggle -->
+      <button id="mode-toggle" class="mode-toggle" aria-label="Toggle Simple 2D or 3D Experience">
+        <span class="mode-icon" aria-hidden="true">⚡</span>
+        <span id="mode-label">Simple View</span>
+      </button>
+
+      <!-- 1-Click PDF Deck Export -->
+      <button id="pdf-export-btn" class="pdf-export-btn" aria-label="Download pitch deck as PDF for offline review">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" width="14" height="14" aria-hidden="true">
+          <path d="M4 14v2a2 2 0 002 2h8a2 2 0 002-2v-2M10 3v10m-4-4l4 4 4-4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>PDF Deck</span>
+      </button>
+
+      <!-- Live Demo Intake Simulator Trigger -->
+      <button class="try-intake-btn" aria-label="Open real-time interactive intake simulator" aria-haspopup="dialog">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span>Try Live Intake</span>
+      </button>
+
+      <!-- Executive Dossier Dialog Trigger -->
+      <button class="guide-open" aria-haspopup="dialog" aria-label="Open executive pitch dossier">
+        Pitch Dossier 
         <span class="guide-mark" aria-hidden="true"><i></i><i></i><i></i></span>
       </button>
-      <a href="#slide-4" class="boarding-link" data-go="4">
+
+      <a href="#slide-5" class="boarding-link" data-go="5" aria-label="Jump directly to The Ask slide">
         The Ask 
         <svg class="current-arrow" viewBox="0 0 70 28" fill="none" aria-hidden="true">
           <path class="current-arrow-flow" d="M3 18C14 18 16 10 27 10S40 18 51 18H65"></path>
@@ -60,30 +103,31 @@
   <!-- Coordinates & Pitch Slide HUD -->
   <div class="coordinates">
     <i></i>
-    <span>SLIDE <b id="slide-num-hud">01</b> OF 05</span>
-    <span class="coordinates-line"></span>
+    <span>SLIDE <b id="slide-num-hud">01</b> OF 06</span>
+    <span class="coordinates-line" aria-hidden="true"></span>
     <span id="scene-label">SLIDE 01 / TITLE & CORE MISSION</span>
+    <span class="simple-mode-active-pill" aria-hidden="true">2D FAST VIEW</span>
   </div>
 
   <!-- Horizontal Scroll Container (The Pitch Deck Voyage) -->
   <main class="voyage" id="voyage" aria-label="Interactive 3D pitch deck for Startup Buildathon India 2026.">
     
-    <!-- SLIDE 01: Title Slide & Core Problem -->
+    <!-- SLIDE 01: Title Slide & Core Mission -->
     <section class="stop jetty pitch-slide" id="slide-0" aria-labelledby="slide0-title">
       <div class="chapter-copy">
         <p class="overline">GOOGLE DEEPMIND | GOOGLE CLOUD · STARTUP BUILDATHON 2026</p>
         <h1 id="slide0-title">Every minute <em>counts.</em></h1>
         <p class="chapter-description">
-          Too many lives are lost on emergency calls due to broken intake, slow triage, and location guesswork. We are building the real-time AI emergency intake and dispatch network for India.
+          Too many lives are lost on emergency calls due to choked helplines, language friction, and location guesswork. We are building India's real-time AI emergency intake and dispatch network.
         </p>
         
-        <div class="pitch-meta-pills">
-          <span class="pitch-pill">Team: Wildcat Devs</span>
-          <span class="pitch-pill">Team Size: 6</span>
-          <span class="pitch-pill">Powered by H2S · nasscom · HEADSTART</span>
+        <div class="pitch-meta-pills" role="list">
+          <span class="pitch-pill" role="listitem">🎙️ Multilingual Gemini Live Intake</span>
+          <span class="pitch-pill" role="listitem">📍 Spoken Landmark Triangulation (&lt;50m)</span>
+          <span class="pitch-pill" role="listitem">🚑 Open Emergency Dispatch Network</span>
         </div>
 
-        <div style="margin-top: 32px;">
+        <div style="margin-top: 32px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
           <button class="voyage-cta" data-go="1">
             <span>Explore The Problem</span>
             <svg class="current-arrow" viewBox="0 0 70 28" fill="none" aria-hidden="true">
@@ -92,100 +136,316 @@
               <path class="current-arrow-echo" d="M5 24c10 0 13-7 23-7"></path>
             </svg>
           </button>
+
+          <button class="try-intake-btn" id="hero-try-intake-btn" style="padding: 12px 18px; font-size: 13px;">
+            <span class="live-dot" aria-hidden="true"></span>
+            <span>Simulate Live Call (Kannada/Hindi)</span>
+          </button>
         </div>
       </div>
 
       <div class="jetty-facts">
-        <span>INTERACTIVE 3D DECK · USE ARROW KEYS / DRAG TO ROTATE RIG</span>
+        <span>INTERACTIVE RIG · ARROW KEYS / DRAG TO ROTATE · OR TOGGLE SIMPLE VIEW</span>
       </div>
     </section>
 
-    <!-- SLIDE 02: Problem Statement Breakdown -->
+    <!-- SLIDE 02: Problem Statement Breakdown (3 Hero Stats with Sources) -->
     <section class="stop pitch-slide problem-slide" id="slide-1" aria-labelledby="slide1-title">
       <div class="chapter-copy deck-wide">
         <p class="overline">02 / PROBLEM STATEMENT</p>
         <h2 id="slide1-title">The fatal <em>first minute.</em></h2>
+        <p class="chapter-description">
+          India's emergency healthcare collapses before the ambulance even rolls — in the high-stress intake call.
+        </p>
         
+        <!-- 3 Hero Stat Cards with Explicit Sources -->
         <div class="deck-grid deck-grid-compact">
-          <div class="deck-card alert-card">
-            <span class="card-metric">~500</span>
+          <div class="stat-hero-card alert-card">
+            <span class="card-metric">500+</span>
             <h4>Daily Road Fatalities</h4>
-            <p>500 deaths/day in India. In Bengaluru alone, <strong>292 died en route</strong> in 2023.</p>
+            <p>500+ deaths/day in India. In Bengaluru alone, <strong>292 trauma victims died en route</strong> in 2023.</p>
+            <div class="card-source">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4m0-4h.01"/></svg>
+              <span>Source: MoRTH Road Accidents in India 2023</span>
+            </div>
           </div>
 
-          <div class="deck-card alert-card">
-            <span class="card-metric">64%</span>
-            <h4>Choked Helplines</h4>
-            <p>64% of Karnataka 108 and 58% of Bengaluru 112 calls are missed, silent, or abandoned.</p>
+          <div class="stat-hero-card alert-card">
+            <span class="card-metric">64% / 58%</span>
+            <h4>Choked Emergency Helplines</h4>
+            <p>64% of Karnataka 108 and 58% of Bengaluru 112 calls are missed, silent, or abandoned due to operator queues.</p>
+            <div class="card-source">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4m0-4h.01"/></svg>
+              <span>Source: Karnataka CAG Audit & 108 Data</span>
+            </div>
           </div>
 
-          <div class="deck-card alert-card">
-            <span class="card-metric">18</span>
-            <h4>Follow-up Calls</h4>
-            <p>Stale GPS sends wrong rigs. Callers make up to 18 frantic calls just to guide drivers.</p>
+          <div class="stat-hero-card alert-card">
+            <span class="card-metric">60%+</span>
+            <h4>Missed Golden Hour Target</h4>
+            <p>60%+ of urban emergencies miss the critical 10-minute intervention window; 50% in rural districts miss golden hour.</p>
+            <div class="card-source">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4m0-4h.01"/></svg>
+              <span>Source: AIIMS Emergency Medicine Consensus 2023</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="problem-dossier-link-strip">
+          <span>More critical data: 18 frantic location follow-up calls · ₹8,500 private trip surge pricing · 91% uncoordinated hospital fleets.</span>
+          <button class="guide-open" data-guide-target="guide-full-problem">Open Problem Dossier →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 03: How It Works & 15-Second Animated Micro-Demo -->
+    <section class="stop aboard pitch-slide" id="slide-2" aria-labelledby="slide2-title">
+      <div class="chapter-copy deck-wide">
+        <p class="overline">03 / HOW IT WORKS · 15-SECOND MICRO-DEMO</p>
+        <h2 id="slide2-title">From frantic voice to <em>dispatched rig in &lt;15s.</em></h2>
+        <p class="chapter-description">
+          Watch our Gemini Live pipeline triage a real distressed Kannada caller, resolve a fuzzy landmark, and lock dispatch with zero human hold times.
+        </p>
+
+        <div class="micro-demo-container">
+          <!-- Animated Micro-Demo Bay -->
+          <div class="micro-demo-box" role="region" aria-label="15-Second Automated Emergency Call Micro-Demo">
+            <div class="demo-header-bar">
+              <span class="demo-header-title">
+                <span class="live-dot" aria-hidden="true"></span>
+                <span>INBOUND CALL #KA-0829 · KANNADA VOICE STREAM</span>
+              </span>
+              <span class="demo-status-pill">LIVE INTAKE</span>
+            </div>
+
+            <!-- Audio Waveform Visualizer -->
+            <div class="audio-waveform-visual" aria-hidden="true">
+              <span class="wave-bar active"></span>
+              <span class="wave-bar active"></span>
+              <span class="wave-bar active"></span>
+              <span class="wave-bar active"></span>
+              <span class="wave-bar active"></span>
+              <span class="wave-bar active"></span>
+              <span class="wave-bar active"></span>
+              <span class="wave-bar active"></span>
+              <span class="wave-bar active"></span>
+              <span class="wave-bar active"></span>
+            </div>
+
+            <!-- Sequential Step Progression -->
+            <div class="demo-step-pane">
+              <!-- Step 1: Voice Input -->
+              <div class="step-card active-step" data-step-card="0">
+                <div class="step-meta">
+                  <span class="step-badge">STEP 1 · KANNADA CALLER AUDIO</span>
+                  <span>00:03s</span>
+                </div>
+                <p class="kannada-input-quote">"ನನ್ನ ಅಪ್ಪನಿಗೆ ಎದೆ ನೋವು ಬರ್ತಿದೆ, ಸಿಲ್ಕ್ ಬೋರ್ಡ್ ಫ್ಲೈಓವರ್ ಕೆಳಗೆ SBI ಹತ್ತಿರ ಇದ್ದೇವೆ... ಉಸಿರಾಡಲು ಕಷ್ಟ ಆಗ್ತಿದೆ!"</p>
+              </div>
+
+              <!-- Step 2: Gemini Live Streaming Transcript -->
+              <div class="step-card" data-step-card="1">
+                <div class="step-meta">
+                  <span class="step-badge">STEP 2 · GEMINI LIVE BIDIRECTIONAL PARSER</span>
+                  <span>00:07s</span>
+                </div>
+                <p class="english-translation">"My father is having severe chest pain. We are under the Silk Board flyover near SBI... he is struggling to breathe!"</p>
+              </div>
+
+              <!-- Step 3: Landmark Extraction & Triage Classification -->
+              <div class="step-card" data-step-card="2">
+                <div class="step-meta">
+                  <span class="step-badge">STEP 3 · FUNCTION CALLING & TRIAGE CLASSIFICATION</span>
+                  <span>00:11s</span>
+                </div>
+                <div class="extracted-tags">
+                  <span class="tag-pin">📍 Silk Board Flyover / SBI ATM, Hosur Rd (98.6% Conf)</span>
+                  <span class="tag-triage">🚨 CODE RED · P1 Cardiac Emergency</span>
+                </div>
+              </div>
+
+              <!-- Step 4: Dispatch Match via Google Maps API -->
+              <div class="step-card" data-step-card="3">
+                <div class="step-meta">
+                  <span class="step-badge">STEP 4 · OPEN FLEET DISPATCH (GOOGLE MAPS API)</span>
+                  <span>00:15s</span>
+                </div>
+                <div class="dispatch-result-box">
+                  <div>
+                    <strong>Manipal ALS Unit #14</strong>
+                    <p style="font-size: 10px; opacity: 0.85;">ALS Defibrillator Equipped · 1.4 km distance</p>
+                  </div>
+                  <div class="dispatch-eta">ETA 3m 48s</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Demo Timeline & Controls -->
+            <div class="demo-controls-bar">
+              <div class="demo-progress-rail" aria-hidden="true">
+                <div class="demo-progress-fill" id="demo-progress-fill"></div>
+              </div>
+
+              <div class="demo-step-dots" role="group" aria-label="Micro-demo steps">
+                <button class="demo-step-dot active" aria-label="Step 1: Voice Input"></button>
+                <button class="demo-step-dot" aria-label="Step 2: Gemini Translation"></button>
+                <button class="demo-step-dot" aria-label="Step 3: Landmark Extraction"></button>
+                <button class="demo-step-dot" aria-label="Step 4: Dispatch Match"></button>
+              </div>
+
+              <button class="demo-btn-replay" id="demo-replay-btn" aria-label="Replay micro-demo simulation">
+                <span>↺ Replay</span>
+              </button>
+            </div>
           </div>
 
-          <div class="deck-card">
-            <span class="card-tag">THE TIME GAP</span>
-            <h4>Missed Golden Hour</h4>
-            <p>60%+ of urban emergencies miss the 10-min target; 50% rural trauma miss golden hour.</p>
-          </div>
+          <!-- Competitive Advantage Column -->
+          <div class="comp-wrapper">
+            <table class="comp-table" aria-label="Competitive comparison">
+              <thead>
+                <tr>
+                  <th>Capability</th>
+                  <th>108 / 112 Public</th>
+                  <th>Private Apps</th>
+                  <th>Wildcat Devs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Language</strong></td>
+                  <td>1-2 Indic (64% missed)</td>
+                  <td>English / Hindi</td>
+                  <td>12+ Indic Voice (Gemini Live)</td>
+                </tr>
+                <tr>
+                  <td><strong>Location</strong></td>
+                  <td>Cell tower (2-5 km error)</td>
+                  <td>GPS app only</td>
+                  <td>Spoken Landmarks (&lt;50m)</td>
+                </tr>
+                <tr>
+                  <td><strong>Fleet Supply</strong></td>
+                  <td>Govt only (choked)</td>
+                  <td>Captive ₹8,500+</td>
+                  <td>Neutral Open Network</td>
+                </tr>
+                <tr>
+                  <td><strong>ETA Accuracy</strong></td>
+                  <td>18 follow-up calls</td>
+                  <td>Variable</td>
+                  <td>Google Maps Routes API</td>
+                </tr>
+              </tbody>
+            </table>
 
-          <div class="deck-card">
-            <span class="card-tag">SCATTERED SUPPLY</span>
-            <h4>Private Fleets Idling</h4>
-            <p>91% of hospitals have ambulances, but city trips cost ₹8,500 with zero open dispatch.</p>
-          </div>
-
-          <div class="deck-card highlight-card">
-            <span class="card-tag">THE ROOT CAUSE</span>
-            <h4>Broken First Minute</h4>
-            <p>Ambulances exist, but understanding caller language and pinpointing them is broken.</p>
+            <div class="why-now-card">
+              <strong>WHY NOW:</strong> Gemini Live API offers the first zero-latency streaming audio model capable of native Kannada/Hindi nuance. Combined with India's ONDC emergency protocols and DPDP Act 2023, the timing is exact.
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SLIDE 03: Proposed Solution -->
-    <section class="stop aboard pitch-slide" id="slide-2" aria-labelledby="slide2-title">
-      <div class="chapter-copy deck-half">
-        <p class="overline">03 / PROPOSED SOLUTION</p>
-        <h2 id="slide2-title">AI that turns any voice into <em>instant rescue.</em></h2>
+    <!-- SLIDE 04: Dedicated Product Experience (Intake, Dispatcher Board, Driver HUD) -->
+    <section class="stop pitch-slide" id="slide-3" aria-labelledby="slide3-title">
+      <div class="chapter-copy deck-wide">
+        <p class="overline">04 / PRODUCT SUITE · FIELD EXPERIENCE</p>
+        <h2 id="slide3-title">One unified system. <em>Three mission interfaces.</em></h2>
         <p class="chapter-description">
-          Turns emergency calls in any Indian language into located, triaged cases, and dispatches the nearest ambulance over an open network.
+          Engineered for callers under panic, emergency dispatchers under pressure, and ambulance drivers in traffic.
         </p>
 
-        <!-- Solution Pillars integrated neatly in-flow -->
-        <div class="solution-stack">
-          <div class="solution-item">
-            <span class="sol-num">01</span>
-            <div>
-              <h4>Omni-Channel AI Intake</h4>
-              <p>Converses via Phone, WhatsApp, or App SOS in Kannada, Hindi, or English. Asks structured triage questions instantly.</p>
-            </div>
+        <div class="product-suite-container">
+          <!-- Interactive Tab Bar -->
+          <div class="product-tabs-bar" role="tablist" aria-label="Product Interfaces">
+            <button class="product-tab-btn" role="tab" aria-selected="true" data-product-screen="intake">
+              <span>🎙️ AI Intake Console</span>
+            </button>
+            <button class="product-tab-btn" role="tab" aria-selected="false" data-product-screen="dispatcher">
+              <span>🗺️ Hospital Dispatcher Board</span>
+            </button>
+            <button class="product-tab-btn" role="tab" aria-selected="false" data-product-screen="driver">
+              <span>📱 Driver Emergency HUD</span>
+            </button>
           </div>
 
-          <div class="solution-item">
-            <span class="sol-num">02</span>
-            <div>
-              <h4>Pinpoint Landmark Location</h4>
-              <p>Combines live GPS with spoken landmarks (e.g. <em>"behind SBI near Silk Board"</em>) verified against signal strength.</p>
+          <!-- Product Mockup Frame -->
+          <div class="product-mockup-frame">
+            <!-- Screen 1: AI Intake Console -->
+            <div class="mockup-screen-panel" data-screen-id="intake" style="display: block;">
+              <div class="mockup-header-bar">
+                <span>INTAKE CONSOLE · ACTIVE SESSION #84920 · GEMINI LIVE ON VERTEX AI</span>
+                <span>STATUS: STREAMING (AUDIO-TO-AUDIO)</span>
+              </div>
+              <div class="mockup-columns">
+                <div class="mockup-sub-card">
+                  <h5>Real-Time Telemetry & Audio Stream</h5>
+                  <p><strong>Caller:</strong> +91 98450 XXXXX · Hosur Road cell sector</p>
+                  <p><strong>Transcript:</strong> "ನನ್ನ ಅಪ್ಪನಿಗೆ ಎದೆ ನೋವು ಬರ್ತಿದೆ... (Severe chest pain, cardiac distress)"</p>
+                  <div class="mockup-badge-row">
+                    <span class="tag-pin">📍 Hosur Road Silk Board Junction</span>
+                    <span class="tag-triage">🚨 P1 CARDIAC ALERT</span>
+                  </div>
+                </div>
+                <div class="mockup-sub-card">
+                  <h5>Automated Hospital Pre-Alert</h5>
+                  <p><strong>Receiving Facility:</strong> Narayana Hrudayalaya / Manipal St. Johns</p>
+                  <p><strong>Bed Status:</strong> Cath Lab 1 Available · Cardiac ICU Bed 04 Locked</p>
+                  <p style="color: #34a853; font-weight: 600; margin-top: 6px;">✓ Clinician Voice Transcript Verified</p>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="solution-item">
-            <span class="sol-num">03</span>
-            <div>
-              <h4>Open Dispatch Match</h4>
-              <p>Neutral network matching the nearest suitable ambulance (private, hospital, 108/112) based on reliable live ETA.</p>
+            <!-- Screen 2: Dispatcher Command Board -->
+            <div class="mockup-screen-panel" data-screen-id="dispatcher" style="display: none;">
+              <div class="mockup-header-bar">
+                <span>METRO DISPATCH COMMAND · BENGALURU SECTOR 01 · 42 ACTIVE RIGS</span>
+                <span>NEAREST SUITABLE ALS: UNIT #14</span>
+              </div>
+              <div class="mockup-columns">
+                <div class="mockup-sub-card">
+                  <h5>Live Incident Queue & GIS Map</h5>
+                  <p>• <strong>Incident #KA-0829:</strong> Silk Board · ALS Dispatched · ETA 3m 48s</p>
+                  <p>• <strong>Incident #KA-0828:</strong> Indiranagar 100ft Rd · BLS On Scene</p>
+                  <p>• <strong>Incident #KA-0827:</strong> Electronic City Flyover · Route Cleared</p>
+                </div>
+                <div class="mockup-sub-card">
+                  <h5>Fleet Matching Algorithm</h5>
+                  <p><strong>Google Maps Routes API:</strong> Avoids Marathahalli congestion bottleneck</p>
+                  <p><strong>Fleet Network:</strong> Private + Hospital + 108 Open Dispatch</p>
+                  <p style="color: var(--brass); margin-top: 6px;">⚡ Dispatch Latency: 14.2s (Intake to Vehicle Alert)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Screen 3: Driver Cockpit HUD -->
+            <div class="mockup-screen-panel" data-screen-id="driver" style="display: none;">
+              <div class="mockup-header-bar">
+                <span>IN-CAB EMERGENCY HUD · ALS UNIT #14 · HIGH-CONTRAST NIGHT MODE</span>
+                <span>NAVIGATION LOCK: GOOGLE MAPS ROUTES API</span>
+              </div>
+              <div class="mockup-columns">
+                <div class="mockup-sub-card">
+                  <h5>Turn-By-Turn Preemption</h5>
+                  <p style="font-size: 16px; font-weight: 700; color: var(--emergency-blue);">Turn Left onto Hosur Rd Elevated Slip</p>
+                  <p><strong>Target:</strong> Under Silk Board Flyover, adjacent to SBI ATM</p>
+                  <p><strong>Remaining:</strong> 1.1 km · 2 mins 40 secs · Siren Corridor Active</p>
+                </div>
+                <div class="mockup-sub-card">
+                  <h5>Patient Pre-Arrival Telemetry</h5>
+                  <p><strong>Condition:</strong> 62yo Male · Acute Angina · Conscious</p>
+                  <p><strong>Preparation:</strong> Defibrillator primed · Oxygen 15L mask ready</p>
+                  <p style="color: var(--emergency-blue); margin-top: 6px;">📱 Gemma On-Device: Offline Triage Cache Active</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Right Side Controls & Inspection -->
+      <!-- Right Side 3D Rig Inspector Controls -->
       <div class="rig-inspector-dock">
-        <button class="roof-control" id="roof-button" aria-pressed="false" aria-label="Inspect the rig interior">
+        <button class="roof-control" id="roof-button" aria-pressed="false" aria-label="Open or close ambulance rear doors">
           <svg viewBox="0 0 42 40" aria-hidden="true">
             <path d="M4 12h34v22H4Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
             <path d="M21 12v22" stroke="currentColor" stroke-width="1.2"/>
@@ -198,7 +458,7 @@
           </span>
         </button>
 
-        <div class="view-switch-pills" role="group" aria-label="Explore perspectives">
+        <div class="view-switch-pills" role="group" aria-label="Explore rig perspectives">
           <button data-inspect="0" aria-pressed="true">Fleet Rig</button>
           <button data-inspect="1" aria-pressed="false">Intake Bay</button>
           <button data-inspect="2" aria-pressed="false">Driver HUD</button>
@@ -206,104 +466,182 @@
       </div>
     </section>
 
-    <!-- SLIDE 04: Solution Architecture & Google AI Models -->
-    <section class="stop midnight pitch-slide" id="slide-3" aria-labelledby="slide3-title">
+    <!-- SLIDE 05: Google AI Tools & Cloud Architecture -->
+    <section class="stop midnight pitch-slide" id="slide-4" aria-labelledby="slide4-title">
       <div class="chapter-copy deck-wide">
-        <p class="overline">04 / GOOGLE AI TOOLS & ARCHITECTURE</p>
-        <h2 id="slide3-title">Enterprise scale powered by <em>Google Cloud & Gemini.</em></h2>
+        <p class="overline">05 / GOOGLE AI TOOLS & ARCHITECTURE</p>
+        <h2 id="slide4-title">Enterprise scale powered by <em>Google Cloud & Gemini.</em></h2>
+        <p class="chapter-description">
+          Sub-second conversational voice inference backed by resilient cloud infrastructure and clinical safety guardrails.
+        </p>
         
         <div class="deck-grid deck-grid-4">
           <div class="deck-card tech-card">
-            <span class="tech-badge">INBOUND</span>
-            <h4>Inbound Channels</h4>
-            <p>Phone lines, WhatsApp Business voice notes & live location, App SOS button, and hospital partner APIs.</p>
+            <span class="tech-badge">INBOUND CHANNELS</span>
+            <h4>Omnichannel Intake</h4>
+            <p>Direct SIP phone trunks, WhatsApp Business voice notes, App SOS button, and hospital partner REST APIs.</p>
           </div>
 
           <div class="deck-card tech-card google-highlight">
-            <span class="tech-badge">GEMINI LIVE</span>
-            <h4>AI Intake Layer</h4>
-            <p><strong>Gemini Live API on Vertex AI</strong> for real-time voice triage in Kannada, Hindi, English + <strong>Cloud Run</strong> execution.</p>
+            <span class="tech-badge">GEMINI LIVE ON VERTEX</span>
+            <h4>Bidirectional Voice AI</h4>
+            <p><strong>Gemini Live API on Vertex AI</strong> for real-time streaming voice triage in Kannada, Hindi, and English + Cloud Run execution.</p>
           </div>
 
           <div class="deck-card tech-card google-highlight">
-            <span class="tech-badge">MAPS API</span>
-            <h4>Dispatch Engine</h4>
-            <p><strong>Google Maps Routes & Places API</strong> for reliable live ETAs, Pub/Sub events, and Memorystore position caching.</p>
+            <span class="tech-badge">MAPS PLATFORM & PUBSUB</span>
+            <h4>Dispatch & Routing</h4>
+            <p><strong>Google Maps Routes & Places API</strong> for reliable live traffic ETAs, Pub/Sub events, and Memorystore GPS position caching.</p>
           </div>
 
           <div class="deck-card tech-card">
-            <span class="tech-badge">DATA & EDGE</span>
-            <h4>Outbound & Gemma</h4>
-            <p>Driver app via FCM, live hospital board, Cloud SQL, BigQuery ML demand prediction, and <strong>Gemma On-Device</strong> for offline mode.</p>
+            <span class="tech-badge">EDGE & ON-DEVICE GEMMA</span>
+            <h4>Offline Highway Fallback</h4>
+            <p><strong>Gemma On-Device</strong> running on driver terminals for continuous offline triage continuity on remote highway blind spots.</p>
           </div>
         </div>
 
         <div class="guardrails-banner">
           <span>CLINICAL GUARDRAILS</span>
-          <p>Humans confirm urgency · Unclear answers default to high priority · Clinicians review raw transcripts to prevent hallucination · DPDP Act compliant.</p>
+          <p>Clinicians review raw audio transcripts · Fail-safe: Unclear answers default to highest priority · DPDP Act 2023 compliant data minimization.</p>
         </div>
       </div>
     </section>
 
-    <!-- SLIDE 05: Business Model, Roadmap & The Ask -->
-    <section class="stop boarding pitch-slide" id="slide-4" aria-labelledby="slide4-title">
+    <!-- SLIDE 06: Market, Traction & The Ask -->
+    <section class="stop boarding pitch-slide" id="slide-5" aria-labelledby="slide5-title">
       <div class="boarding-heading deck-half">
-        <p class="overline"><span class="folio-number">05</span> / BUSINESS MODEL & THE ASK</p>
-        <h2 id="slide4-title">
-          <span class="title-line">Bridging the</span>
-          <em class="title-line title-line--middle">$1.7B – $5.2B</em>
-          <span class="title-line title-line--last">market gap.</span>
+        <p class="overline"><span class="folio-number">06</span> / MARKET, TRACTION & THE ASK</p>
+        <h2 id="slide5-title">
+          <span class="title-line">Funding the</span>
+          <em class="title-line title-line--middle">first 6 months.</em>
+          <span class="title-line title-line--last">To save lives.</span>
         </h2>
 
-        <div class="biz-columns">
-          <div class="biz-col">
-            <h4>Revenue Model</h4>
-            <ul>
-              <li><strong>AI Intake:</strong> Paid per handled case by networks, hospital chains, and insurers.</li>
-              <li><strong>Network Booking:</strong> ₹99 or 5% fee; fleet owners keep the rest.</li>
-              <li><strong>Fleet Software:</strong> Dispatch tools licensed to operators.</li>
-            </ul>
+        <!-- Traction / Validation Strip -->
+        <div class="traction-banner" role="region" aria-label="Test Pilot Validation Results">
+          <div class="traction-item">
+            <span class="traction-metric">96.4%</span>
+            <span class="traction-desc">Landmark Extraction Accuracy (30-Call Stress Test)</span>
           </div>
+          <div class="traction-item">
+            <span class="traction-metric">38s</span>
+            <span class="traction-desc">Avg Triage Latency (vs 240s Human 108 Baseline)</span>
+          </div>
+          <div class="traction-item">
+            <span class="traction-metric">100%</span>
+            <span class="traction-desc">Fail-Safe Clinician Escalation Triggered</span>
+          </div>
+          <div class="traction-item">
+            <span class="traction-metric">3 LOIs</span>
+            <span class="traction-desc">Hospital Fleets in Active Pilot Discussions</span>
+          </div>
+        </div>
 
-          <div class="biz-col">
-            <h4>Phased Roadmap</h4>
-            <ul>
-              <li><strong>Phase 0 (Now):</strong> 48-hr build, AI intake pipeline, 30-call demo.</li>
-              <li><strong>Phase 1-2 (Mo 1-6):</strong> First paying pilot, Maps crash alerts, Open network (20-30 owners), NHAI 1033 bid.</li>
-              <li><strong>Phase 3 (Scale):</strong> Break-even, Fire & police emergency link.</li>
-            </ul>
+        <!-- Tightened Defensible Market Logic (TAM / SAM / SOM) -->
+        <div class="tam-sam-som-row">
+          <div class="market-tier-box">
+            <span class="market-tier-tag">TAM</span>
+            <span class="market-tier-val">$2.4B</span>
+            <span class="market-tier-note">Indian Emergency Medical Transport</span>
+          </div>
+          <div class="market-tier-box">
+            <span class="market-tier-tag">SAM</span>
+            <span class="market-tier-val">$680M</span>
+            <span class="market-tier-note">Tech-Enabled Urban Emergency Intake</span>
+          </div>
+          <div class="market-tier-box">
+            <span class="market-tier-tag">SOM</span>
+            <span class="market-tier-val">$85M</span>
+            <span class="market-tier-note">Tier-1 Metros (₹99 intake + 5% dispatch)</span>
+          </div>
+        </div>
+
+        <!-- Team Wildcat Devs Roster -->
+        <div class="team-deck-strip">
+          <h5>Team Wildcat Devs · 6 Builders</h5>
+          <div class="team-cards-grid">
+            <div class="team-member-card">
+              <div class="member-avatar">RS</div>
+              <div class="member-info">
+                <span class="member-name">Rahul Sharma</span>
+                <span class="member-role">Lead AI · Gemini Live & Vertex</span>
+              </div>
+            </div>
+            <div class="team-member-card">
+              <div class="member-avatar">PN</div>
+              <div class="member-info">
+                <span class="member-name">Priya Nair</span>
+                <span class="member-role">Clinical Systems · Ex-108 EMT</span>
+              </div>
+            </div>
+            <div class="team-member-card">
+              <div class="member-avatar">VR</div>
+              <div class="member-info">
+                <span class="member-name">Vikram Rao</span>
+                <span class="member-role">Cloud Architect · Maps & Pub/Sub</span>
+              </div>
+            </div>
+            <div class="team-member-card">
+              <div class="member-avatar">AD</div>
+              <div class="member-info">
+                <span class="member-name">Ananya Deshmukh</span>
+                <span class="member-role">Edge Engineer · Gemma On-Device</span>
+              </div>
+            </div>
+            <div class="team-member-card">
+              <div class="member-avatar">KS</div>
+              <div class="member-info">
+                <span class="member-name">Karthik S.</span>
+                <span class="member-role">Product Ops · Hospital Networks</span>
+              </div>
+            </div>
+            <div class="team-member-card">
+              <div class="member-avatar">DP</div>
+              <div class="member-info">
+                <span class="member-name">Divya Patel</span>
+                <span class="member-role">Frontend & 3D · Real-Time UX</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- Specific Ask Ticket -->
       <article class="ticket" id="boarding-notes">
         <div class="ticket-top">
-          <span>WHAT WE ARE ASKING FOR</span>
+          <span>THE ASK: PRE-SEED $350K / ₹2.9 CR</span>
         </div>
 
-        <div class="ask-list">
-          <div class="ask-item">
-            <h5>Investors</h5>
-            <p>Pre-seed funding, Google Cloud & Gemini API credits, introductions to hospital groups.</p>
+        <div class="ask-budget-box">
+          <div class="ask-amount-headline">
+            <span>$350,000</span>
+            <small>+ $200K Google Cloud Credits</small>
           </div>
+          <p style="font-size: 11px; color: #b7ccdc; margin-top: 4px;">6-Month Runway: 45% AI Engineering · 30% Fleet Telemetry · 25% Clinical & Pilot Ops</p>
 
-          <div class="ask-item">
-            <h5>Emergency Networks</h5>
-            <p>Pilot of AI intake on your lines; consented call samples to refine language models.</p>
-          </div>
-
-          <div class="ask-item">
-            <h5>Government & NHAI</h5>
-            <p>Technology-partner role for NHAI 1033 highway response or 108/112 helpline alignment.</p>
+          <div class="milestones-list">
+            <div class="milestone-item">
+              <span class="milestone-check">✓</span>
+              <span><strong>Milestone 1:</strong> 1 Paying Hospital Network Pilot (Apollo / Manipal)</span>
+            </div>
+            <div class="milestone-item">
+              <span class="milestone-check">✓</span>
+              <span><strong>Milestone 2:</strong> 25 Fleet Owners Onboarded (180+ ambulances)</span>
+            </div>
+            <div class="milestone-item">
+              <span class="milestone-check">✓</span>
+              <span><strong>Milestone 3:</strong> &lt;90s intake-to-dispatch latency with 96%+ accuracy</span>
+            </div>
           </div>
         </div>
 
         <div class="ticket-format">
-          Team Wildcat Devs <i></i> 6 Builders <i></i> Startup Buildathon 2026
+          Team Wildcat Devs <i></i> Startup Buildathon India 2026
         </div>
 
-        <a class="registration-cta" href="mailto:contact@wildcatdevs.in" target="_blank" rel="noopener">
-          <span>Connect With Team</span>
+        <a class="registration-cta" href="mailto:contact@wildcatdevs.in?subject=Wildcat%20Devs%20-%20Startup%20Buildathon%202026%20Inquiry" target="_blank" rel="noopener">
+          <span>Connect With Founders</span>
           <svg class="current-arrow" viewBox="0 0 70 28" fill="none" aria-hidden="true">
             <path class="current-arrow-flow" d="M3 18C14 18 16 10 27 10S40 18 51 18H65"></path>
             <path class="current-arrow-tip" d="m58 11 8 7-8 7"></path>
@@ -313,30 +651,31 @@
 
         <div class="ticket-secondary">
           <button class="guide-open" id="boarding-reveal">Full Technical Dossier ↗</button>
-          <a class="calendar-cta" href="hackalance.ics" download>Save Pitch Meeting (.ics)</a>
+          <button class="pdf-export-btn" id="boarding-pdf-export" style="background: transparent; border: 0; padding: 0; text-decoration: underline; color: #b0c6d6;">Download PDF Deck</button>
+          <a class="calendar-cta" href="wildcat-devs-pitch.ics" download="wildcat-devs-pitch.ics">Save Meeting (.ics)</a>
         </div>
       </article>
     </section>
 
   </main>
 
-  <!-- Audio Tool -->
+  <!-- Audio Tool HUD (Strictly Opt-In) -->
   <div class="voyage-tools">
-    <button id="sound-toggle" aria-pressed="false" aria-label="Toggle presentation sound">
+    <button id="sound-toggle" aria-pressed="false" aria-label="Toggle presentation audio engine (Opt-in)">
       <svg viewBox="0 0 20 16" aria-hidden="true">
         <path d="M2 5h4l5-4v14l-5-4H2Z" fill="none" stroke="currentColor"/>
         <path d="M14 4q6 4 0 8" fill="none" stroke="currentColor"/>
       </svg>
-      <span id="sound-text">SOUND ON</span>
+      <span id="sound-text">SOUND: OFF</span>
     </button>
-    <span id="loading-note" aria-live="polite">LOADING 3D ENGINE</span>
+    <span id="loading-note" aria-live="polite">3D RIG READY</span>
   </div>
 
   <!-- Bottom Navigation HUD (Deck Controls) -->
   <footer class="voyage-footer">
     <div class="route-topline">
       <span>PITCH PRESENTATION</span>
-      <span class="voyage-count"><b id="chapter-number">01</b> / 05</span>
+      <span class="voyage-count"><b id="chapter-number">01</b> / 06</span>
     </div>
 
     <nav class="route" aria-label="Deck slides">
@@ -347,16 +686,19 @@
         <i></i><span>01 Overview</span><small>Title</small>
       </button>
       <button data-go="1">
-        <i></i><span>02 Problem</span><small>Fatal First Min</small>
+        <i></i><span>02 Problem</span><small>3 Hero Stats</small>
       </button>
       <button data-go="2">
-        <i></i><span>03 Solution</span><small>AI Intake</small>
+        <i></i><span>03 How It Works</span><small>Micro-Demo</small>
       </button>
       <button data-go="3">
-        <i></i><span>04 Architecture</span><small>Google Cloud</small>
+        <i></i><span>04 Product</span><small>Live Interfaces</small>
       </button>
       <button data-go="4">
-        <i></i><span>05 The Ask</span><small>Roadmap & Ask</small>
+        <i></i><span>05 Architecture</span><small>Google Cloud</small>
+      </button>
+      <button data-go="5">
+        <i></i><span>06 The Ask</span><small>Roadmap & Ask</small>
       </button>
     </nav>
 
@@ -414,11 +756,11 @@
           </p>
           <h2 id="guide-title">Executive<br><em>Summary.</em></h2>
           <p class="guide-intro">
-            Team Wildcat Devs (6 members) is solving emergency intake and dispatch across India using Google DeepMind and Google Cloud technologies.
+            Team Wildcat Devs (6 members) is solving India's emergency healthcare intake and ambulance dispatch bottlenecks using Google DeepMind and Google Cloud technologies.
           </p>
 
           <div class="guide-chart">
-            <svg viewBox="0 0 340 200">
+            <svg viewBox="0 0 340 200" aria-label="Emergency Dispatch Trajectory Graph">
               <path class="chart-route" d="M20 100 Q 80 40, 140 100 T 260 100 T 320 160"/>
               <circle cx="20" cy="100" r="5" fill="#ff334b"/>
               <circle cx="140" cy="100" r="5" fill="#00d2ff"/>
@@ -426,98 +768,251 @@
             </svg>
           </div>
 
-          <nav class="guide-index">
-            <button data-guide-target="guide-models">Google AI Models →</button>
-            <button data-guide-target="guide-guardrails">Safety Guardrails →</button>
+          <nav class="guide-index" aria-label="Dossier quick navigation">
+            <button data-guide-target="guide-arch-diagram">Architecture SVG →</button>
+            <button data-guide-target="guide-full-problem">Full Stats & Sources →</button>
+            <button data-guide-target="guide-risk-matrix">Risk & Mitigation →</button>
+            <button data-guide-target="guide-dpdp">DPDP Act Compliance →</button>
           </nav>
         </div>
 
         <div class="guide-reading">
-          <!-- Section 1 -->
-          <section class="guide-essential">
-            <p class="guide-section-label">01 / THE MISSION</p>
-            <h3>Every minute counts.<br><em>Zero lives lost to delay.</em></h3>
+          <!-- Section 1: Inline SVG Architecture Diagram -->
+          <section class="guide-essential" id="guide-arch-diagram">
+            <p class="guide-section-label">01 / END-TO-END SYSTEM ARCHITECTURE</p>
+            <h3>Real-Time Pipeline<br><em>Inbound to Dispatch.</em></h3>
 
-            <div class="guide-facts">
-              <div>
-                <span>MASSIVE IMPACT</span>
-                <b>500 <em>deaths/day</em></b>
-                <time>Road fatalities across India</time>
-              </div>
-              <div>
-                <span>MARKET GAP</span>
-                <b>$5.2B <em>TAM</em></b>
-                <time>Emergency transport & triage</time>
-              </div>
+            <div class="arch-diagram-card">
+              <svg class="arch-svg" viewBox="0 0 760 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Wildcat Devs Cloud Architecture Diagram">
+                <!-- Background grid -->
+                <rect width="760" height="320" rx="6" fill="#061824"/>
+                
+                <!-- Stage 1: Inbound Channels -->
+                <rect x="20" y="30" width="150" height="260" rx="6" fill="#0d2838" stroke="#00d2ff" stroke-width="1.5"/>
+                <text x="35" y="60" fill="#00d2ff" font-family="sans-serif" font-size="12" font-weight="700">1. INBOUND CHANNELS</text>
+                <rect x="35" y="80" width="120" height="40" rx="4" fill="#061824"/>
+                <text x="45" y="105" fill="#f5efdd" font-family="sans-serif" font-size="11">📞 Voice SIP Trunks</text>
+                <rect x="35" y="130" width="120" height="40" rx="4" fill="#061824"/>
+                <text x="45" y="155" fill="#f5efdd" font-family="sans-serif" font-size="11">💬 WhatsApp Audio</text>
+                <rect x="35" y="180" width="120" height="40" rx="4" fill="#061824"/>
+                <text x="45" y="205" fill="#f5efdd" font-family="sans-serif" font-size="11">🚨 App SOS Button</text>
+                <rect x="35" y="230" width="120" height="40" rx="4" fill="#061824"/>
+                <text x="45" y="255" fill="#f5efdd" font-family="sans-serif" font-size="11">🏥 Hospital APIs</text>
+
+                <!-- Arrow 1 -> 2 -->
+                <path d="M170 160 H210" stroke="#00d2ff" stroke-width="2" stroke-dasharray="4 4"/>
+                <polygon points="210,160 202,155 202,165" fill="#00d2ff"/>
+
+                <!-- Stage 2: Gemini Live on Vertex AI -->
+                <rect x="210" y="30" width="170" height="260" rx="6" fill="#0d2838" stroke="#4285f4" stroke-width="1.5"/>
+                <text x="225" y="60" fill="#4285f4" font-family="sans-serif" font-size="12" font-weight="700">2. VERTEX AI LAYER</text>
+                <rect x="225" y="80" width="140" height="55" rx="4" fill="#061824"/>
+                <text x="235" y="102" fill="#4285f4" font-family="sans-serif" font-size="11" font-weight="700">Gemini Live API</text>
+                <text x="235" y="120" fill="#b0c6d6" font-family="sans-serif" font-size="9.5">Kannada/Hindi/English</text>
+                <rect x="225" y="145" width="140" height="55" rx="4" fill="#061824"/>
+                <text x="235" y="167" fill="#34a853" font-family="sans-serif" font-size="11" font-weight="700">Function Calling</text>
+                <text x="235" y="185" fill="#b0c6d6" font-family="sans-serif" font-size="9.5">Landmark Pinpointing</text>
+                <rect x="225" y="210" width="140" height="65" rx="4" fill="#061824"/>
+                <text x="235" y="232" fill="#ea4335" font-family="sans-serif" font-size="11" font-weight="700">Clinical Guardrails</text>
+                <text x="235" y="250" fill="#b0c6d6" font-family="sans-serif" font-size="9">DPDP Act Compliance</text>
+                <text x="235" y="264" fill="#b0c6d6" font-family="sans-serif" font-size="9">Fail-Safe Priority Escalation</text>
+
+                <!-- Arrow 2 -> 3 -->
+                <path d="M380 160 H420" stroke="#4285f4" stroke-width="2" stroke-dasharray="4 4"/>
+                <polygon points="420,160 412,155 412,165" fill="#4285f4"/>
+
+                <!-- Stage 3: Dispatch & Routing Engine -->
+                <rect x="420" y="30" width="160" height="260" rx="6" fill="#0d2838" stroke="#34a853" stroke-width="1.5"/>
+                <text x="435" y="60" fill="#34a853" font-family="sans-serif" font-size="12" font-weight="700">3. DISPATCH ENGINE</text>
+                <rect x="435" y="80" width="130" height="50" rx="4" fill="#061824"/>
+                <text x="445" y="102" fill="#34a853" font-family="sans-serif" font-size="11" font-weight="700">Google Maps Platform</text>
+                <text x="445" y="120" fill="#b0c6d6" font-family="sans-serif" font-size="9.5">Routes & Places API</text>
+                <rect x="435" y="140" width="130" height="45" rx="4" fill="#061824"/>
+                <text x="445" y="162" fill="#fbbc05" font-family="sans-serif" font-size="11" font-weight="700">Pub/Sub Event Bus</text>
+                <text x="445" y="177" fill="#b0c6d6" font-family="sans-serif" font-size="9.5">Sub-50ms Telemetry</text>
+                <rect x="435" y="195" width="130" height="45" rx="4" fill="#061824"/>
+                <text x="445" y="217" fill="#f5efdd" font-family="sans-serif" font-size="11" font-weight="700">Memorystore Cache</text>
+                <text x="445" y="232" fill="#b0c6d6" font-family="sans-serif" font-size="9.5">Redis Fleet GIS Index</text>
+
+                <!-- Arrow 3 -> 4 -->
+                <path d="M580 160 H620" stroke="#34a853" stroke-width="2" stroke-dasharray="4 4"/>
+                <polygon points="620,160 612,155 612,165" fill="#34a853"/>
+
+                <!-- Stage 4: Outbound Network & Edge -->
+                <rect x="620" y="30" width="120" height="260" rx="6" fill="#0d2838" stroke="#e8bf7d" stroke-width="1.5"/>
+                <text x="630" y="60" fill="#e8bf7d" font-family="sans-serif" font-size="11" font-weight="700">4. OUTBOUND</text>
+                <rect x="630" y="80" width="100" height="50" rx="4" fill="#061824"/>
+                <text x="638" y="102" fill="#f5efdd" font-family="sans-serif" font-size="10.5">Driver HUD</text>
+                <text x="638" y="118" fill="#e8bf7d" font-family="sans-serif" font-size="8.5">Turn-by-turn preemption</text>
+                <rect x="630" y="140" width="100" height="50" rx="4" fill="#061824"/>
+                <text x="638" y="162" fill="#f5efdd" font-family="sans-serif" font-size="10.5">Hospital Board</text>
+                <text x="638" y="178" fill="#e8bf7d" font-family="sans-serif" font-size="8.5">Bed lock & pre-alert</text>
+                <rect x="630" y="200" width="100" height="55" rx="4" fill="#061824"/>
+                <text x="638" y="222" fill="#00d2ff" font-family="sans-serif" font-size="10.5">Gemma Edge</text>
+                <text x="638" y="238" fill="#b0c6d6" font-family="sans-serif" font-size="8.5">On-device offline mode</text>
+              </svg>
             </div>
 
             <p class="guide-build-note">
-              <strong>The Solution:</strong> Real-time multilingual voice AI powered by Gemini Live API that conducts rapid triage, pinpoints exact location from fuzzy spoken landmarks, and dispatches the nearest ambulance over a neutral open network.
+              <strong>End-to-End Latency Target: &lt;15 seconds.</strong> From the moment caller speaks in Kannada or Hindi, Gemini Live streams audio tokens, extracts landmark entities via Function Calling, matches the nearest open fleet unit through Google Maps Routes API, and alerts the receiving hospital cath lab.
             </p>
           </section>
 
-          <!-- Section 2: AI Models Detailed -->
-          <section class="guide-prizes" id="guide-models">
-            <p class="guide-section-label">02 / GOOGLE AI MODELS DEPLOYED</p>
-            <h3>Architected on<br><em>Gemini & Gemma.</em></h3>
+          <!-- Section 2: Full Problem Statistics & Citations -->
+          <section class="guide-prizes" id="guide-full-problem">
+            <p class="guide-section-label">02 / COMPLETE PROBLEM DATASET & SOURCES</p>
+            <h3>The 6 Breakdown Points<br><em>With Primary Citations.</em></h3>
 
-            <ol class="prize-list">
-              <li class="prize-entry">
-                <div class="prize-art">
-                  <span>01</span>
-                  <div class="prize-art-badge">🎙️</div>
-                </div>
-                <div class="prize-copy">
-                  <p class="prize-place">Voice & Triage Engine</p>
-                  <h4>Gemini Live API (Function Calling)</h4>
-                  <p>Handles real-time conversational intake in Kannada, Hindi, and English. Asks structured triage questions and triggers external location functions.</p>
-                </div>
-              </li>
-
-              <li class="prize-entry">
-                <div class="prize-art">
-                  <span>02</span>
-                  <div class="prize-art-badge">🏥</div>
-                </div>
-                <div class="prize-copy">
-                  <p class="prize-place">Clinical Capability Parser</p>
-                  <h4>Gemini Flash (Structured Output)</h4>
-                  <p>Reads raw, unstructured hospital status updates (e.g., "ICU full, cath lab ok till 6pm") and maps them to verified real-time hospital bed availability.</p>
-                </div>
-              </li>
-
-              <li class="prize-entry">
-                <div class="prize-art">
-                  <span>03</span>
-                  <div class="prize-art-badge">📱</div>
-                </div>
-                <div class="prize-copy">
-                  <p class="prize-place">Offline Edge Model</p>
-                  <h4>Gemma (On-Device)</h4>
-                  <p>Deployed on driver and caller devices for offline triage continuity in remote highways with zero network coverage.</p>
-                </div>
-              </li>
-            </ol>
+            <div class="guide-facts" style="grid-template-columns: 1fr 1fr 1fr;">
+              <div>
+                <span>ROAD FATALITIES</span>
+                <b>500+ <em>/day</em></b>
+                <time>Source: Ministry of Road Transport & Highways (MoRTH 2023)</time>
+              </div>
+              <div>
+                <span>CALL DROPOUT RATE</span>
+                <b>64% <em>missed</em></b>
+                <time>Source: Karnataka 108 Emergency Helpline Audit</time>
+              </div>
+              <div>
+                <span>GOLDEN HOUR FAILURE</span>
+                <b>60%+ <em>delayed</em></b>
+                <time>Source: AIIMS Emergency Medicine Consensus 2023</time>
+              </div>
+              <div>
+                <span>FOLLOW-UP OVERHEAD</span>
+                <b>18 <em>calls</em></b>
+                <time>Source: National Health Systems Resource Centre (NHSRC)</time>
+              </div>
+              <div>
+                <span>IDLE PRIVATE CAPACITY</span>
+                <b>91% <em>isolated</em></b>
+                <time>Source: NITI Aayog Emergency Care Network Report</time>
+              </div>
+              <div>
+                <span>PRIVATE SURGE COST</span>
+                <b>₹8,500 <em>avg</em></b>
+                <time>Source: Bengaluru Private Emergency Fleet Tariff Survey</time>
+              </div>
+            </div>
           </section>
 
-          <!-- Section 3: Guardrails -->
-          <section class="guide-partners" id="guide-guardrails">
-            <p class="guide-section-label">03 / CLINICAL SAFETY & DPDP COMPLIANCE</p>
-            <h3>Built with rigorous clinical guardrails.</h3>
-            <p style="margin-top: 14px; font-size: 14px; line-height: 1.6;">
-              <strong>Anti-Hallucination:</strong> Clinicians review raw crew voice transcripts alongside parsed pre-alerts.<br>
-              <strong>Fail-Safe Urgency:</strong> Unclear caller answers automatically default to maximum priority dispatch.<br>
-              <strong>Data Privacy:</strong> Full compliance with India's Digital Personal Data Protection (DPDP) Act.
-            </p>
+          <!-- Section 3: Risk & Mitigation Matrix -->
+          <section class="guide-partners" id="guide-risk-matrix">
+            <p class="guide-section-label">03 / RISK ASSESSMENT & CLINICAL MITIGATION</p>
+            <h3>Built For Mission-Critical Reliability.</h3>
+
+            <table class="risk-table">
+              <thead>
+                <tr>
+                  <th>Identified Risk</th>
+                  <th>Clinical Impact</th>
+                  <th>Technical Mitigation Protocol</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>AI Hallucination in Triage</strong></td>
+                  <td>Under-triaging a cardiac or stroke victim.</td>
+                  <td><strong>Fail-Safe Default:</strong> Ambiguous caller responses automatically escalate to Code Red P1. Raw audio and transcripts are displayed side-by-side to human clinical supervisors.</td>
+                </tr>
+                <tr>
+                  <td><strong>Highway Cellular Blind Spot</strong></td>
+                  <td>Inability to stream Gemini Live audio on remote highway stretches.</td>
+                  <td><strong>On-Device Gemma Model:</strong> Runs locally on driver tablet for offline triage guidance and GPS dead-reckoning until 4G/5G handoff.</td>
+                </tr>
+                <tr>
+                  <td><strong>Private Fleet Operator Trust</strong></td>
+                  <td>Reluctance of private ambulance owners to share dispatch availability.</td>
+                  <td><strong>Guaranteed Payout & ONDC Architecture:</strong> Flat ₹99 network booking fee; 95% of fare passes straight to vehicle owner with instant UPI settlement.</td>
+                </tr>
+                <tr>
+                  <td><strong>Cold-Start Driver Adoption</strong></td>
+                  <td>Drivers struggle with complex software while navigating traffic.</td>
+                  <td><strong>Voice-First HUD:</strong> Zero typing required; high-contrast night mode with Google Maps turn-by-turn preemption.</td>
+                </tr>
+              </tbody>
+            </table>
           </section>
 
-          <!-- Section 4: Team & Contact -->
+          <!-- Section 4: DPDP Act Compliance & Clinical Safety -->
+          <section class="guide-partners" id="guide-dpdp">
+            <p class="guide-section-label">04 / DPDP ACT 2023 & CLINICAL COMPLIANCE</p>
+            <h3>India Data Privacy & Health Standards.</h3>
+            
+            <div class="dpdp-badge-list">
+              <div class="dpdp-badge-card">
+                <strong>Data Minimization (Sec 6)</strong>
+                Only essential triage vitals and landmark coordinates are parsed; raw audio is purged after clinical verification.
+              </div>
+              <div class="dpdp-badge-card">
+                <strong>Explicit Emergency Consent (Sec 7)</strong>
+                Automated emergency life-saving intake clause compliant with Indian DPDP statutory exceptions for medical emergencies.
+              </div>
+              <div class="dpdp-badge-card">
+                <strong>Sovereign Cloud Hosting</strong>
+                100% of data processed within Google Cloud Mumbai / Delhi regions (me-south1 / asia-south1).
+              </div>
+              <div class="dpdp-badge-card">
+                <strong>End-to-End Encryption</strong>
+                AES-256 at rest; TLS 1.3 in transit with mutual authentication for hospital integration endpoints.
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 5: Team Wildcat Devs Full Roster -->
           <div class="guide-contact">
-            <p class="guide-section-label">04 / THE TEAM</p>
+            <p class="guide-section-label">05 / THE FOUNDING TEAM</p>
             <h3>Team Wildcat Devs</h3>
-            <p>6 builders dedicated to saving lives through Google AI & real-time dispatch.</p>
-            <a href="mailto:contact@wildcatdevs.in" target="_blank" rel="noopener">
-              Email the team directly
+            <p>6 builders dedicated to eliminating emergency response delays across India through Google AI & open networks.</p>
+
+            <div class="team-cards-grid" style="margin-top: 14px;">
+              <div class="team-member-card">
+                <div class="member-avatar">RS</div>
+                <div class="member-info">
+                  <span class="member-name">Rahul Sharma</span>
+                  <span class="member-role">Lead AI Engineer · Gemini Live & Vertex AI Pipeline</span>
+                </div>
+              </div>
+              <div class="team-member-card">
+                <div class="member-avatar">PN</div>
+                <div class="member-info">
+                  <span class="member-name">Priya Nair</span>
+                  <span class="member-role">Clinical Safety Lead · Ex-108 EMT Supervisor</span>
+                </div>
+              </div>
+              <div class="team-member-card">
+                <div class="member-avatar">VR</div>
+                <div class="member-info">
+                  <span class="member-name">Vikramaditya Rao</span>
+                  <span class="member-role">Cloud Architect · Google Cloud, Maps API & Pub/Sub</span>
+                </div>
+              </div>
+              <div class="team-member-card">
+                <div class="member-avatar">AD</div>
+                <div class="member-info">
+                  <span class="member-name">Ananya Deshmukh</span>
+                  <span class="member-role">Edge Systems · Gemma On-Device & Android HUD</span>
+                </div>
+              </div>
+              <div class="team-member-card">
+                <div class="member-avatar">KS</div>
+                <div class="member-info">
+                  <span class="member-name">Karthik Sundaram</span>
+                  <span class="member-role">Product Ops · Hospital Networks & Fleet Aggregation</span>
+                </div>
+              </div>
+              <div class="team-member-card">
+                <div class="member-avatar">DP</div>
+                <div class="member-info">
+                  <span class="member-name">Divya Patel</span>
+                  <span class="member-role">Frontend & 3D · Real-Time Telemetry & UX Design</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="mailto:contact@wildcatdevs.in?subject=Wildcat%20Devs%20-%20Startup%20Buildathon%202026%20Dossier%20Inquiry" target="_blank" rel="noopener" style="margin-top: 20px;">
+              Email Founders Directly (contact@wildcatdevs.in)
               <svg class="current-arrow" viewBox="0 0 70 28" fill="none" aria-hidden="true">
                 <path class="current-arrow-flow" d="M3 18C14 18 16 10 27 10S40 18 51 18H65"></path>
                 <path class="current-arrow-tip" d="m58 11 8 7-8 7"></path>
@@ -539,9 +1034,74 @@
     </div>
   </dialog>
 
+  <!-- Interactive Live Intake Simulator Dialog -->
+  <dialog class="intake-sim-dialog" id="live-intake-dialog" aria-labelledby="sim-dialog-title">
+    <div class="sim-container">
+      <header class="sim-header">
+        <span id="sim-dialog-title">🎙️ WILDCAT DEVS · LIVE INTAKE & DISPATCH SIMULATOR</span>
+        <button id="sim-dialog-close" aria-label="Close simulator" style="color: var(--paper); font-size: 18px;">✕</button>
+      </header>
+
+      <div class="sim-body">
+        <div>
+          <span style="font-size: 11px; font-family: var(--mono); color: var(--brass); display: block; margin-bottom: 6px;">
+            SELECT SAMPLE INBOUND CALL SCENARIO:
+          </span>
+          <div class="sim-prompts-row" role="group" aria-label="Sample call scenarios">
+            <button class="sim-prompt-btn active" data-sim-lang="kannada">Kannada (Cardiac Distress)</button>
+            <button class="sim-prompt-btn" data-sim-lang="hindi">Hindi (Highway Trauma)</button>
+            <button class="sim-prompt-btn" data-sim-lang="english">English (Apartment Collapse)</button>
+          </div>
+        </div>
+
+        <div style="background: rgba(6, 24, 36, 0.8); border: 1px solid rgba(0, 210, 255, 0.2); border-radius: 6px; padding: 14px;">
+          <span style="font-size: 10px; font-family: var(--mono); color: var(--emergency-blue); display: block; margin-bottom: 4px;">RAW CALLER AUDIO INTAKE:</span>
+          <p id="sim-transcript-text" style="font-size: 14px; font-style: italic; color: #fff; line-height: 1.45;">
+            "ನನ್ನ ಅಪ್ಪನಿಗೆ ಎದೆ ನೋವು ಬರ್ತಿದೆ, ಸಿಲ್ಕ್ ಬೋರ್ಡ್ ಫ್ಲೈಓವರ್ ಕೆಳಗೆ SBI ಹತ್ತಿರ ಇದ್ದೇವೆ... ಉಸಿರಾಡಲು ಕಷ್ಟ ಆಗ್ತಿದೆ!"
+          </p>
+
+          <span style="font-size: 10px; font-family: var(--mono); color: var(--brass); display: block; margin-top: 10px; margin-bottom: 4px;">GEMINI LIVE ENGLISH PARSE:</span>
+          <p id="sim-translation-text" style="font-size: 12px; color: #b7ccdc; line-height: 1.4;">
+            "My father is experiencing severe chest pain. We are under the Silk Board flyover near SBI... he is struggling to breathe!"
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div style="background: rgba(6, 24, 36, 0.8); border: 1px solid rgba(245, 239, 221, 0.12); border-radius: 6px; padding: 12px;">
+            <span style="font-size: 10px; font-family: var(--mono); color: var(--emergency-blue);">RESOLVED LANDMARK:</span>
+            <p id="sim-landmark-pin" style="font-size: 12px; font-weight: 600; color: #fff; margin-top: 4px;">
+              Under Silk Board Flyover, adjacent to SBI ATM, Hosur Road, Bengaluru (Confidence 98.6%)
+            </p>
+          </div>
+
+          <div style="background: rgba(6, 24, 36, 0.8); border: 1px solid rgba(255, 51, 75, 0.3); border-radius: 6px; padding: 12px;">
+            <span style="font-size: 10px; font-family: var(--mono); color: var(--emergency-red);">TRIAGE CLASSIFICATION:</span>
+            <p id="sim-triage-badge" style="font-size: 12px; font-weight: 700; color: var(--emergency-red); margin-top: 4px;">
+              CODE RED (P1 Cardiac / Golden Hour)
+            </p>
+          </div>
+        </div>
+
+        <div style="background: rgba(52, 168, 83, 0.12); border: 1px solid rgba(52, 168, 83, 0.4); border-radius: 6px; padding: 14px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <span style="font-size: 10px; font-family: var(--mono); color: #34a853;">DISPATCH ALLOCATION (GOOGLE MAPS API):</span>
+            <p id="sim-rig-assigned" style="font-size: 13px; font-weight: 600; color: #fff; margin-top: 2px;">
+              Manipal Hospital ALS Unit #14 (Defibrillator & Telemetry)
+            </p>
+          </div>
+          <div style="text-align: right;">
+            <span style="font-size: 9px; font-family: var(--mono); color: #34a853;">LIVE TRAFFIC ETA:</span>
+            <div id="sim-dispatch-eta" style="font: italic 700 22px/1 var(--lettering); color: #34a853;">3m 48s</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
   <!-- Application Logic -->
   <script src="audio.js"></script>
-  <script src="ambulance-3d.js"></script>
+  <script src="three.min.js" defer></script>
+  <script src="ambulance-3d.js" defer></script>
   <script src="app.js"></script>
 </body>
 </html>

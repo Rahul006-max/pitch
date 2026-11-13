@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wildcat Devs//Startup Buildathon India 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+SUMMARY:Wildcat Devs — AI Emergency Intake & Dispatch Pitch
+UID:pitch-2026-wildcatdevs@buildathon.in
+DTSTART:20261121T100000Z
+DTEND:20261121T110000Z
+DESCRIPTION:Presentation & live demonstration of Wildcat Devs: Real-time AI emergency intake and ambulance dispatch network for India, powered by Gemini Live, Gemma, and Google Cloud. Startup Buildathon India 2026 (Google DeepMind | Google Cloud).
+LOCATION:Startup Buildathon India 2026 / Bengaluru, Karnataka, India
+ORGANIZER;CN=Team Wildcat Devs:mailto:contact@wildcatdevs.in
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

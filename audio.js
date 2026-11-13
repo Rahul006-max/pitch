@@ -16,8 +16,14 @@ class AudioEngine {
     this.ecgGain = null;
     this.ecgInterval = null;
 
+    this.isMuted = true; // Strictly opt-in by default
     try {
-      this.isMuted = localStorage.getItem('hackalance_muted') === 'true';
+      const stored = localStorage.getItem('wildcat_muted');
+      if (stored === 'false') {
+        this.isMuted = false;
+      } else {
+        this.isMuted = true;
+      }
     } catch (e) {}
   }
 
@@ -229,7 +235,7 @@ class AudioEngine {
     this.ensureContext();
     this.isMuted = !this.isMuted;
     try {
-      localStorage.setItem('hackalance_muted', String(this.isMuted));
+      localStorage.setItem('wildcat_muted', String(this.isMuted));
     } catch (e) {}
 
     if (this.masterGain && this.ctx) {
