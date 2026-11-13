@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Hackalance//Emergency Tech Hackathon//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+SUMMARY:Hackalance — Rapid Response Solo Builder Sprint
+UID:hackalance-2026-dispatch@tinkerhub.org
+DTSTART:20261121T100000Z
+DTEND:20261122T040000Z
+DESCRIPTION:A 12-hour high-octane solo builder sprint aboard a fleet of high-tech Mobile Tech ICUs / Ambulances rushing through the midnight city. Organized by Devin × TinkerHub.
+LOCATION:Central Dispatch Station, Metro Sector 01
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
