@@ -542,6 +542,15 @@ document.addEventListener("DOMContentLoaded", () => {
         b.setAttribute("aria-pressed", String(+b.dataset.inspect === mode));
       });
 
+      if (mode === 1) {
+        doorsOpen = true;
+        if (roofBtn) {
+          roofBtn.setAttribute("aria-pressed", "true");
+          roofBtn.setAttribute("aria-label", "Close the rear doors");
+        }
+        if (roofLabel) roofLabel.textContent = "Close doors";
+      }
+
       if (world) world.setInspection(mode);
       if (window.audioEngine) window.audioEngine.playTap();
     });

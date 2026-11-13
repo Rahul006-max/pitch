@@ -442,28 +442,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Right Side 3D Rig Inspector Controls -->
-      <div class="rig-inspector-dock">
-        <button class="roof-control" id="roof-button" aria-pressed="false" aria-label="Open or close ambulance rear doors">
-          <svg viewBox="0 0 42 40" aria-hidden="true">
-            <path d="M4 12h34v22H4Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
-            <path d="M21 12v22" stroke="currentColor" stroke-width="1.2"/>
-            <circle cx="16" cy="23" r="1.5" fill="currentColor"/>
-            <circle cx="26" cy="23" r="1.5" fill="currentColor"/>
-          </svg>
-          <span>
-            <small>HARDWARE</small>
-            <b id="roof-label">Open doors</b>
-          </span>
-        </button>
-
-        <div class="view-switch-pills" role="group" aria-label="Explore rig perspectives">
-          <button data-inspect="0" aria-pressed="true">Fleet Rig</button>
-          <button data-inspect="1" aria-pressed="false">Intake Bay</button>
-          <button data-inspect="2" aria-pressed="false">Driver HUD</button>
-        </div>
-      </div>
     </section>
 
     <!-- SLIDE 05: Google AI Tools & Cloud Architecture -->
@@ -658,6 +636,28 @@
     </section>
 
   </main>
+
+  <!-- 3D Rig Perspectives Inspector Dock (Fleet Rig, Trauma Intake Bay, Driver HUD) -->
+  <div class="rig-inspector-dock" role="region" aria-label="3D Rig Perspective Inspector">
+    <button class="roof-control" id="roof-button" aria-pressed="false" aria-label="Open or close ambulance rear doors">
+      <svg viewBox="0 0 42 40" aria-hidden="true">
+        <path d="M4 12h34v22H4Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+        <path d="M21 12v22" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="16" cy="23" r="1.5" fill="currentColor"/>
+        <circle cx="26" cy="23" r="1.5" fill="currentColor"/>
+      </svg>
+      <span>
+        <small>HARDWARE</small>
+        <b id="roof-label">Open doors</b>
+      </span>
+    </button>
+
+    <div class="view-switch-pills" role="group" aria-label="Explore rig perspectives">
+      <button data-inspect="0" aria-pressed="true">Fleet Rig</button>
+      <button data-inspect="1" aria-pressed="false">Intake Bay</button>
+      <button data-inspect="2" aria-pressed="false">Driver HUD</button>
+    </div>
+  </div>
 
   <!-- Audio Tool HUD (Strictly Opt-In) -->
   <div class="voyage-tools">
